@@ -9,34 +9,26 @@ const EmployeeModal = ({ id }) => {
   const getEmployee = async () => {
     let response = await axios.get(`https://reqres.in/api/users/${id}`);
     setEmployee(response.data.data);
+    setOpen(true);
   };
-
   return (
     <Modal
       onClose={() => setOpen(false)}
-      onOpen={() => {
-        getEmployee();
-        setOpen(true);
-      }}
+      onOpen={getEmployee}
       open={open}
       trigger={
-        <Button size="tiny" positive className="view-button">
+        <Button size="tiny" positive>
           View
         </Button>
       }
     >
-      <Modal.Content image id="modal-container">
-        <Image
-          className="image"
-          size="small"
-          src={employee.avatar}
-          wrapped
-        />
+      <Modal.Content image>
+        <Image size="small" src={employee.avatar} wrapped />
         <Modal.Description>
-          <Header className="name">
+          <Header>
             {employee.first_name} {employee.last_name}
           </Header>
-          <p className="email">Email: {employee.email}</p>
+          <p>Email: {employee.email}</p>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
