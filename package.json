@@ -14,13 +14,17 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10"
+    "@testing-library/user-event": "^12.1.10",
+    "cypress": "^9.6.1",
+    "start-server-and-test": "^1.14.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "start:silent": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "cy:open": "cypress open",
+    "cypress": "start-server-and-test start:silent http://localhost:3000 cy:open"
   },
   "eslintConfig": {
     "extends": [

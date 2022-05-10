@@ -17,7 +17,7 @@ const EmployeeList = () => {
 
 
   return (
-    <Item.Group id="employee-list">
+    <Item.Group id="employee-list" data-cy="employee-list">
       {employees.map((employee) => {
         return (
           <Item key={employee.id}>
