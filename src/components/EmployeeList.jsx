@@ -5,19 +5,24 @@ import EmployeeModal from "./EmployeeModal";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
+  const [message, setMessage] = useState();
 
   const fetchData = async () => {
-    const response = await axios.get("https://reqres.in/api/users");
-    setEmployees(response.data.data);
+    try {
+      const response = await axios.get("https://reqres.in/api/users");
+      setEmployees(response.data.data);
+    } catch (error) {
+      setMessage("The server is down");
+    }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-
   return (
     <Item.Group id="employee-list" data-cy="employee-list">
+      {message && message}
       {employees.map((employee) => {
         return (
           <Item key={employee.id}>
@@ -32,7 +37,7 @@ const EmployeeList = () => {
                 {employee.first_name} {employee.last_name}
               </Item.Header>
               <Item.Extra>
-                <EmployeeModal id={employee.id} />   
+                <EmployeeModal id={employee.id} />
               </Item.Extra>
             </Item.Content>
           </Item>

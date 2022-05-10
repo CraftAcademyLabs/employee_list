@@ -17,7 +17,10 @@ const EmployeeModal = ({ id }) => {
       onOpen={getEmployee}
       open={open}
       trigger={
-        <Button size="tiny" positive>
+        <Button 
+        size="tiny" 
+        positive 
+        data-cy={`user-${id}`}>
           View
         </Button>
       }
