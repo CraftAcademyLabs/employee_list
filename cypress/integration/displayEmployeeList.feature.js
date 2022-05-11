@@ -25,7 +25,7 @@ describe("Visting the application", () => {
     });
   });
 
-  describe.only("with API rendering an error", () => {
+  describe("with API rendering an error", () => {
     beforeEach(() => {
       cy.intercept("GET", "https://reqres.in/api/users", { statusCode: 500 });
       cy.visit("/");
