@@ -25,7 +25,7 @@
     "test": "react-scripts test",
     "cy:open": "cypress open",
     "cy:cross": "cypress run --headed --browser chrome && cypress run --headed --browser electron",
-    "cypress": "start-server-and-test start:silent http://localhost:3000 cy:cross"
+    "cypress": "start-server-and-test start:silent http://localhost:3000 cy:open"
   },
   "eslintConfig": {
     "extends": [
