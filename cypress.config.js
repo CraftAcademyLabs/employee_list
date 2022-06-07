@@ -9,5 +9,6 @@ module.exports = defineConfig({
     },
     baseUrl: "http://localhost:3000",
     excludeSpecPattern: process.env.CI ? ["cypress/e2e/all.cy.js"] : [],
+    video: false,
   },
 });
