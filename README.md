@@ -1,3 +1,7 @@
+[![Test Coverage](https://api.codeclimate.com/v1/badges/09436442770bcc57c7d0/test_coverage)](https://codeclimate.com/github/CraftAcademyLabs/employee_list/test_coverage)
+
+[![Build Status](https://craftacademy.semaphoreci.com/badges/employee_list/branches/master.svg?key=cb60311a-ea22-45cf-9057-c6de8f9107d4)](https://craftacademy.semaphoreci.com/projects/employee_list)
+
 # Employee List 
 React Application to be used in Cypress 101 Workshop May 2022.
 
