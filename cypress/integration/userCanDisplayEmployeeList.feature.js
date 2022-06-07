@@ -1,5 +1,8 @@
 describe("The list of employees", () => {
   beforeEach(() => {
+    cy.intercept("GET", "https://reqres.in/api/users", {
+      fixture: "usersResponse.json",
+    });
     cy.visit("/");
   });
 
@@ -16,7 +19,7 @@ describe("The list of employees", () => {
       .children()
       .first()
       .find(".name")
-      .should("contain", "George Bluth");
+      .should("contain", "Thomas Bluth");
   });
 
   it("is expected that the list items display an image", () => {
