@@ -23,7 +23,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cypress": "start-test start:silent :3000 cy:open",
-    "cypress:ci": "start-test start:silent :3000 cy:run"
+    "cypress:ci": "CI=true start-test start:silent :3000 cy:run"
   },
   "eslintConfig": {
     "extends": [
