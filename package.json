@@ -21,8 +21,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cy:open": "cypress open",
-    "cy:run": "cypress run --browser chrome",
-    "cypress": "start-test start:silent :3000 cy:open"
+    "cy:run": "cypress run",
+    "cypress": "start-test start:silent :3000 cy:open",
+    "cypress:ci": "start-test start:silent :3000 cy:run"
   },
   "eslintConfig": {
     "extends": [
