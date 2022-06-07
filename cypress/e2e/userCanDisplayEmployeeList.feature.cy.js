@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("The list of employees", () => {
   beforeEach(() => {
     cy.intercept("GET", "https://reqres.in/api/users", {
@@ -14,7 +15,7 @@ describe("The list of employees", () => {
     cy.get("#employee-list").children().should("have.length", 6);
   });
 
-  it("is expected that the list items display the expected content", () => {
+  it.only("is expected that the list items display the expected content", () => {
     cy.get("#employee-list")
       .children()
       .first()

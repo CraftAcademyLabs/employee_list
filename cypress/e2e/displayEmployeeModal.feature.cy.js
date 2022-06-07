@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("Display of employee modal", () => {
   beforeEach(() => {
     cy.intercept("GET", "https://reqres.in/api/users", {
@@ -22,5 +23,10 @@ describe("Display of employee modal", () => {
       cy.get(".image").should("be.visible");
       cy.get(".email").should("contain", "george.bluth@reqres.in");
     });
+  });
+
+  it("is expected to hide the modal on click outside", () => {
+    cy.get(".dimmer").click(-10, 0, { force: true });
+    cy.get("#modal-container").should("not.exist");
   });
 });
